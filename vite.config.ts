@@ -8,7 +8,7 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
-      '@sluk': path.resolve(__dirname, './src'),
+      '@': path.resolve(__dirname, './src'),
     },
   },
 })
