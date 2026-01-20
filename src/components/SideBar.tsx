@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 import { Button } from "@/components/ui/button";
-import { Library, MessageCircleMore, SunDim, UserRound } from "lucide-react";
+import { useTheme } from "@/states/providers/themes";
+import { Library, MessageCircleMore, Moon, SunDim, UserRound } from "lucide-react";
 
 function SideBarNav() {
     return (
@@ -17,19 +18,29 @@ function SideBarNav() {
     )
 }
 
+function SideBarThemeToggle() {
+    const { setTheme, theme } = useTheme()
+    const nextTheme = theme === "dark" ? "light" : "dark"
+    return (
+        <Button type="button" variant={'ghost'} aria-hidden aria-label="Toggle Theme" className="p-4 hover:bg-sidebar-ring/20 hover:rounded-full" onClick={_ => setTheme(nextTheme)}>
+            {nextTheme === "dark" ? (
+                <SunDim />
+            ) : (
+                <Moon />
+            )}
+        </Button>
+    )
+}
+
 export function SideBar() {
     return (
         <aside className="hidden md:flex flex-col items-center justify-between py-6 bg-sidebar-accent">
             <SideBarNav />
-            <ul className="space-y-5">
-                <li><Button type="button" variant={'ghost'} aria-label="User Profile" className="p-4 hover:bg-sidebar-ring/20 hover:rounded-full" >
+            <ul className="flex flex-col space-y-5">
+                <Button type="button" variant={'ghost'} aria-label="User Profile" className="p-4 hover:bg-sidebar-ring/20 hover:rounded-full" >
                     <UserRound />
                 </Button>
-                </li>
-                <li><Button type="button" variant={'ghost'} aria-hidden aria-label="Toggle Theme" className="p-4 hover:bg-sidebar-ring/20 hover:rounded-full">
-                    <SunDim />
-                </Button>
-                </li>
+                <SideBarThemeToggle />
             </ul>
         </aside >
     )
