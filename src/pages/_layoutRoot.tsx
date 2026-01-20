@@ -1,13 +1,13 @@
+import { SideBar } from "@/components/SideBar";
 import { Outlet } from "react-router";
 
 export function LayoutRoot() {
     return (
         <>
-            {/* Header */}
+            <SideBar />
             <main>
                 <Outlet />
             </main>
-            {/* Footer */}
         </>
     )
 }
