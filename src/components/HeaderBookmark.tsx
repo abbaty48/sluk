@@ -1,13 +1,43 @@
 import { Bookmark } from "lucide-react";
 import { Link } from "react-router";
 import { Badge } from "./ui/badge";
+import { cn } from "@/lib/utils";
 
-export function HomeBookMark() {
+interface HeaderBookmarkProps {
+    count?: number;
+    className?: string;
+    showCount?: boolean;
+}
+
+export function HomeBookMark({
+    count = 10,
+    className,
+    showCount = true
+}: HeaderBookmarkProps) {
     return (
-        <Link to={'/bookmarks'} className="flex items-center justify-center hover:bg-sidebar-ring/20 hover:rounded-full max-w-20 max-h-20" aria-label="Checkout your bookmarks" title="Bookmarks">
-            <Badge variant={'secondary'} className="relative p-6 bg-transparent">
-                <span className="absolute top-4 right-4 block w-3.5 h-3.5 text-center bg-red-600 rounded-full text-xs z-10">2</span>
-                <Bookmark data-icon="inline-end" className="relative" />
+        <Link
+            to={'/bookmarks'}
+            title={`Bookmarks (${count})`}
+            aria-label={`View ${count} bookmarks`}
+            className={cn(
+                "flex items-center justify-center hover:bg-(--state-layer-hover) hover:rounded-full max-w-20 max-h-20 transition-all duration-200 group",
+                className
+            )}
+        >
+            <Badge
+                variant={'secondary'}
+                className="relative p-6 bg-transparent shadow-none hover:bg-transparent group-hover:scale-105 transition-transform duration-200"
+            >
+                {showCount && count > 0 && (
+                    <span className="absolute top-2 right-3 w-4 h-4 text-center bg-destructive text-white rounded-full text-[0.5rem] font-semibold z-10 flex items-center justify-center animate-pulse">
+                        {count > 99 ? '99+' : count}
+                    </span>
+                )}
+                <Bookmark
+                    data-icon="inline-end"
+                    className="relative w-6 h-6 text-primary group-hover:text-primary/80 transition-colors duration-200"
+                    fill={count > 0 ? "currentColor" : "none"}
+                />
             </Badge>
         </Link>
     )
