@@ -1,3 +1,4 @@
+import { HomeBookMark } from "@/components/HeaderBookmark";
 import { SearchBar } from "@/components/SearchBar";
 import { Library } from "lucide-react";
 import { Link } from "react-router";
@@ -11,6 +12,7 @@ export function Home() {
                     <p className="hidden md:inline-block text-xs text-slate-500">Sule lamido university library.</p>
                 </Link>
                 <SearchBar />
+                <HomeBookMark />
             </header>
         </>
     )
