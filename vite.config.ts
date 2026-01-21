@@ -9,6 +9,7 @@ export default defineConfig({
   server: {
     host: true,
     strictPort: true,
+    allowedHosts: ["localhost", "library-repository-3vai.onrender.com"],
     port: process.env.PORT ? Number(process.env.PORT) : 3000,
     proxy: {
       '/api': {
