@@ -9,13 +9,13 @@ export default defineConfig({
   server: {
     host: true,
     strictPort: true,
-    allowedHosts: ["localhost", "library-repository-3vai.onrender.com"],
-    port: process.env.PORT ? Number(process.env.PORT) : 3000,
+    allowedHosts: ["library-repository-3vai.onrender.com"],
+    port: process.env.PORT ? Number(process.env.PORT) : 3500,
     proxy: {
       '/api': {
         secure: false,
         changeOrigin: true,
-        target: 'http://localhost:8000',
+        target: 'http://localhost:3000',
         rewrite: (path) => path.replace(/^\/api/, '/api'),
       }
     },
