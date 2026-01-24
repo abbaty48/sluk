@@ -2,9 +2,83 @@ import type { ArticleFilters } from '@/lib/types/IArticle';
 import type { TArticle, TEnrichedArticle } from '@/lib/types/TArticle';
 import db from '@/api/db.json'
 
+export type SortOption = 'relevance' | 'date-desc' | 'date-asc' | 'title-asc' | 'title-desc' | 'author-asc' | 'author-desc';
 
-export function searchArticles(term: string) {
-    return (db.items as TArticle[]).filter(article => article.title.toLowerCase().includes(term.toLowerCase()) || article.abstract.toLowerCase().includes(term.toLowerCase()))
+export function searchArticles(term: string, sortBy: SortOption = 'relevance') {
+    const filtered = (db.items as TArticle[]).filter(article => article.title.toLowerCase().includes(term.toLowerCase()) || article.abstract.toLowerCase().includes(term.toLowerCase()))
+    return sortArticles(filtered, sortBy, term);
+}
+
+function sortArticles(articles: TArticle[], sortBy: SortOption, searchTerm?: string): TArticle[] {
+    const sorted = [...articles];
+
+    switch (sortBy) {
+        case 'relevance':
+            if (searchTerm) {
+                // Sort by relevance: title matches first, then abstract matches
+                return sorted.sort((a, b) => {
+                    const aTitleMatch = a.title.toLowerCase().includes(searchTerm.toLowerCase());
+                    const bTitleMatch = b.title.toLowerCase().includes(searchTerm.toLowerCase());
+                    const aAbstractMatch = a.abstract.toLowerCase().includes(searchTerm.toLowerCase());
+                    const bAbstractMatch = b.abstract.toLowerCase().includes(searchTerm.toLowerCase());
+
+                    // Title matches get higher priority
+                    if (aTitleMatch && !bTitleMatch) return -1;
+                    if (!aTitleMatch && bTitleMatch) return 1;
+
+                    // If both have title matches or neither, sort by position in title
+                    if (aTitleMatch && bTitleMatch) {
+                        const aIndex = a.title.toLowerCase().indexOf(searchTerm.toLowerCase());
+                        const bIndex = b.title.toLowerCase().indexOf(searchTerm.toLowerCase());
+                        return aIndex - bIndex;
+                    }
+
+                    // Abstract matches after title matches
+                    if (aAbstractMatch && !bAbstractMatch) return -1;
+                    if (!aAbstractMatch && bAbstractMatch) return 1;
+
+                    // If both have abstract matches, sort by position in abstract
+                    if (aAbstractMatch && bAbstractMatch) {
+                        const aIndex = a.abstract.toLowerCase().indexOf(searchTerm.toLowerCase());
+                        const bIndex = b.abstract.toLowerCase().indexOf(searchTerm.toLowerCase());
+                        return aIndex - bIndex;
+                    }
+
+                    return 0;
+                });
+            }
+            // If no search term, fall back to date-desc
+            return sorted.sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime());
+
+        case 'date-desc':
+            return sorted.sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime());
+
+        case 'date-asc':
+            return sorted.sort((a, b) => new Date(a.created_at).getTime() - new Date(b.created_at).getTime());
+
+        case 'title-asc':
+            return sorted.sort((a, b) => a.title.localeCompare(b.title));
+
+        case 'title-desc':
+            return sorted.sort((a, b) => b.title.localeCompare(a.title));
+
+        case 'author-asc':
+            return sorted.sort((a, b) => {
+                const aAuthor = db.users.find(user => user.id === a.submitter_id)?.full_name || '';
+                const bAuthor = db.users.find(user => user.id === b.submitter_id)?.full_name || '';
+                return aAuthor.localeCompare(bAuthor);
+            });
+
+        case 'author-desc':
+            return sorted.sort((a, b) => {
+                const aAuthor = db.users.find(user => user.id === a.submitter_id)?.full_name || '';
+                const bAuthor = db.users.find(user => user.id === b.submitter_id)?.full_name || '';
+                return bAuthor.localeCompare(aAuthor);
+            });
+
+        default:
+            return sorted;
+    }
 }
 
 export function applyArticleFilters(articles: TArticle[], filter: ArticleFilters) {
@@ -47,18 +121,21 @@ export function applyArticleFilters(articles: TArticle[], filter: ArticleFilters
     return filtered;
 }
 
-export function getArticles(term?: string, filter?: ArticleFilters, page: number = 1, limit: number = 10) {
+export function getArticles(term?: string, filter?: ArticleFilters, page: number = 1, limit: number = 10, sortBy: SortOption = 'date-desc') {
     const allArticles = db.items as TArticle[];
 
     let filteredArticles = allArticles;
 
     if (term) {
-        filteredArticles = searchArticles(term);
+        filteredArticles = searchArticles(term, sortBy);
     }
 
     if (filter) {
         filteredArticles = applyArticleFilters(filteredArticles, filter);
     }
+
+    // Apply sorting
+    filteredArticles = sortArticles(filteredArticles, sortBy, term);
 
     const startIndex = (page - 1) * limit;
     const endIndex = startIndex + limit;
