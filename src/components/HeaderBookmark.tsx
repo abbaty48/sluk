@@ -10,7 +10,7 @@ interface HeaderBookmarkProps {
 }
 
 export function HomeBookMark({
-    count = 10,
+    count = 0,
     className,
     showCount = true
 }: HeaderBookmarkProps) {
@@ -25,8 +25,8 @@ export function HomeBookMark({
             )}
         >
             <Badge
-                variant={'secondary'}
-                className="relative p-6 bg-transparent shadow-none hover:bg-transparent group-hover:scale-105 transition-transform duration-200"
+                variant={'outline'}
+                className="relative p-4 bg-transparent shadow-none hover:bg-transparent group-hover:scale-105 transition-transform duration-200"
             >
                 {showCount && count > 0 && (
                     <span className="absolute top-2 right-3 w-4 h-4 text-center bg-destructive text-white rounded-full text-[0.5rem] font-semibold z-10 flex items-center justify-center animate-pulse">

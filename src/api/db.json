@@ -1,0 +1,1073 @@
+{
+    "roles": [
+        {
+            "id": 1,
+            "name": "admin",
+            "description": "System administrator"
+        },
+        {
+            "id": 2,
+            "name": "librarian",
+            "description": "Repository librarian"
+        },
+        {
+            "id": 3,
+            "name": "faculty",
+            "description": "Academic staff"
+        },
+        {
+            "id": 4,
+            "name": "student",
+            "description": "Student user"
+        },
+        {
+            "id": 5,
+            "name": "public",
+            "description": "Public user"
+        }
+    ],
+    "users": [
+        {
+            "id": "u1",
+            "full_name": "System Administrator",
+            "email": "admin@university.edu",
+            "role_id": 1,
+            "is_active": true,
+            "created_at": "2026-01-01T10:00:00Z"
+        },
+        {
+            "id": "u2",
+            "full_name": "Library Officer",
+            "email": "librarian@university.edu",
+            "role_id": 2,
+            "is_active": true,
+            "created_at": "2026-01-02T10:00:00Z"
+        },
+        {
+            "id": "u3",
+            "full_name": "Dr. Amina Bello",
+            "email": "amina.bello@university.edu",
+            "role_id": 3,
+            "is_active": true,
+            "created_at": "2026-01-03T10:00:00Z"
+        },
+        {
+            "id": "u4",
+            "full_name": "John Musa",
+            "email": "john.musa@student.university.edu",
+            "role_id": 4,
+            "is_active": true,
+            "created_at": "2026-01-04T10:00:00Z"
+        },
+        {
+            "id": "u5",
+            "full_name": "Dr. Emmanuel Adebayo",
+            "email": "emmanuel.adebayo@university.edu",
+            "role_id": 3,
+            "is_active": true,
+            "created_at": "2026-01-05T10:00:00Z"
+        },
+        {
+            "id": "u6",
+            "full_name": "Sarah Okafor",
+            "email": "sarah.okafor@student.university.edu",
+            "role_id": 4,
+            "is_active": true,
+            "created_at": "2026-01-06T10:00:00Z"
+        },
+        {
+            "id": "u7",
+            "full_name": "Prof. Ngozi Eze",
+            "email": "ngozi.eze@university.edu",
+            "role_id": 3,
+            "is_active": true,
+            "created_at": "2026-01-07T10:00:00Z"
+        }
+    ],
+    "communities": [
+        {
+            "id": 1,
+            "name": "Faculty of Science",
+            "description": "Science-based academic departments",
+            "created_at": "2026-01-01T09:00:00Z"
+        },
+        {
+            "id": 2,
+            "name": "Faculty of Arts",
+            "description": "Arts and humanities departments",
+            "created_at": "2026-01-02T09:00:00Z"
+        },
+        {
+            "id": 3,
+            "name": "Faculty of Engineering",
+            "description": "Engineering and technology departments",
+            "created_at": "2026-01-03T09:00:00Z"
+        }
+    ],
+    "collections": [
+        {
+            "id": 1,
+            "community_id": 1,
+            "name": "Department of Computer Science",
+            "description": "Computer Science research and projects",
+            "created_at": "2026-01-01T09:30:00Z"
+        },
+        {
+            "id": 2,
+            "community_id": 1,
+            "name": "Department of Physics",
+            "description": "Physics research and publications",
+            "created_at": "2026-01-02T09:30:00Z"
+        },
+        {
+            "id": 3,
+            "community_id": 2,
+            "name": "Department of Literature",
+            "description": "Literary works and studies",
+            "created_at": "2026-01-03T09:30:00Z"
+        },
+        {
+            "id": 4,
+            "community_id": 3,
+            "name": "Department of Mechanical Engineering",
+            "description": "Mechanical engineering projects",
+            "created_at": "2026-01-04T09:30:00Z"
+        }
+    ],
+    "item_types": [
+        {
+            "id": 1,
+            "name": "Thesis",
+            "description": "Postgraduate thesis"
+        },
+        {
+            "id": 2,
+            "name": "Dissertation",
+            "description": "Doctoral dissertation"
+        },
+        {
+            "id": 3,
+            "name": "Journal Article",
+            "description": "Published article"
+        },
+        {
+            "id": 4,
+            "name": "Dataset",
+            "description": "Research dataset"
+        },
+        {
+            "id": 5,
+            "name": "Conference Paper",
+            "description": "Paper presented at a conference"
+        },
+        {
+            "id": 6,
+            "name": "Book Chapter",
+            "description": "Chapter from a book"
+        }
+    ],
+    "items": [
+        {
+            "id": "i1",
+            "title": "Design and Implementation of a University Library Repository",
+            "abstract": "This study presents the design and implementation of a digital institutional repository.",
+            "item_type_id": 1,
+            "collection_id": 1,
+            "submitter_id": "u4",
+            "status": "published",
+            "embargo_until": null,
+            "created_at": "2026-01-05T08:00:00Z",
+            "updated_at": "2026-01-06T08:00:00Z",
+            "views": 150,
+            "downloads": 45
+        },
+        {
+            "id": "i2",
+            "title": "Quantum Computing Applications in Physics",
+            "abstract": "Exploring the potential of quantum computing in solving complex physics problems.",
+            "item_type_id": 2,
+            "collection_id": 2,
+            "submitter_id": "u5",
+            "status": "published",
+            "embargo_until": null,
+            "created_at": "2026-01-07T08:00:00Z",
+            "updated_at": "2026-01-08T08:00:00Z",
+            "views": 200,
+            "downloads": 60
+        },
+        {
+            "id": "i3",
+            "title": "Modernist Literature in African Contexts",
+            "abstract": "An analysis of modernist literary movements in African literature.",
+            "item_type_id": 3,
+            "collection_id": 3,
+            "submitter_id": "u7",
+            "status": "published",
+            "embargo_until": null,
+            "created_at": "2026-01-09T08:00:00Z",
+            "updated_at": "2026-01-10T08:00:00Z",
+            "views": 120,
+            "downloads": 30
+        },
+        {
+            "id": "i4",
+            "title": "Sustainable Engineering Solutions",
+            "abstract": "Innovative approaches to sustainable practices in mechanical engineering.",
+            "item_type_id": 5,
+            "collection_id": 4,
+            "submitter_id": "u6",
+            "status": "draft",
+            "embargo_until": "2027-01-01T00:00:00Z",
+            "created_at": "2026-01-11T08:00:00Z",
+            "updated_at": "2026-01-12T08:00:00Z",
+            "views": 80,
+            "downloads": 15
+        },
+        {
+            "id": "i5",
+            "title": "Machine Learning in Healthcare",
+            "abstract": "Applications of machine learning algorithms in medical diagnostics and treatment.",
+            "item_type_id": 2,
+            "collection_id": 1,
+            "submitter_id": "u3",
+            "status": "published",
+            "embargo_until": null,
+            "created_at": "2026-01-13T08:00:00Z",
+            "updated_at": "2026-01-14T08:00:00Z",
+            "views": 250,
+            "downloads": 70
+        },
+        {
+            "id": "i6",
+            "title": "African Folktales and Cultural Preservation",
+            "abstract": "The role of oral traditions in preserving cultural heritage in African societies.",
+            "item_type_id": 3,
+            "collection_id": 3,
+            "submitter_id": "u7",
+            "status": "published",
+            "embargo_until": null,
+            "created_at": "2026-01-15T08:00:00Z",
+            "updated_at": "2026-01-16T08:00:00Z",
+            "views": 180,
+            "downloads": 50
+        },
+        {
+            "id": "i7",
+            "title": "Renewable Energy Systems Design",
+            "abstract": "Design principles for efficient renewable energy systems in urban environments.",
+            "item_type_id": 5,
+            "collection_id": 4,
+            "submitter_id": "u5",
+            "status": "published",
+            "embargo_until": null,
+            "created_at": "2026-01-17T08:00:00Z",
+            "updated_at": "2026-01-18T08:00:00Z",
+            "views": 300,
+            "downloads": 90
+        },
+        {
+            "id": "i8",
+            "title": "Data Structures and Algorithms for Beginners",
+            "abstract": "An introductory guide to fundamental data structures and algorithms in computer science.",
+            "item_type_id": 6,
+            "collection_id": 1,
+            "submitter_id": "u4",
+            "status": "published",
+            "embargo_until": null,
+            "created_at": "2026-01-19T08:00:00Z",
+            "updated_at": "2026-01-20T08:00:00Z",
+            "views": 400,
+            "downloads": 120
+        },
+        {
+            "id": "i9",
+            "title": "Introduction to Quantum Computing",
+            "abstract": "A comprehensive guide to quantum computing principles, algorithms, and applications for modern computer science students.",
+            "item_type_id": 6,
+            "collection_id": 2,
+            "submitter_id": "u5",
+            "status": "published",
+            "embargo_until": null,
+            "created_at": "2024-01-01T08:00:00Z",
+            "updated_at": "2024-01-01T08:00:00Z",
+            "views": 1542,
+            "downloads": 15420,
+            "pages": 456,
+            "publisher": "Academic Press",
+            "thumbnail": "https://images.unsplash.com/photo-1752451399417-eb6e072269bb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxxdWFudHVtJTIwY29tcHV0aW5nJTIwdGVjaG5vbG9neXxlbnwxfHx8fDE3Njg3Njg5ODJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+        },
+        {
+            "id": "i10",
+            "title": "Machine Learning in Healthcare: A Systematic Review",
+            "abstract": "Systematic analysis of machine learning applications in healthcare, covering diagnosis, treatment, and patient care.",
+            "item_type_id": 3,
+            "collection_id": 1,
+            "submitter_id": "u3",
+            "status": "published",
+            "embargo_until": null,
+            "created_at": "2023-01-01T08:00:00Z",
+            "updated_at": "2023-01-01T08:00:00Z",
+            "views": 892,
+            "downloads": 8920,
+            "pages": 34,
+            "publisher": "Journal of Medical AI",
+            "thumbnail": "https://images.unsplash.com/photo-1765294064316-6c72add9e9e6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoZWFsdGhjYXJlJTIwbWVkaWNhbCUyMHJlc2VhcmNofGVufDF8fHx8MTc2ODgwNDQ0M3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+            "hasVideo": true
+        },
+        {
+            "id": "i11",
+            "title": "Climate Change and Urban Development",
+            "abstract": "Doctoral thesis examining the relationship between urban planning decisions and climate change mitigation strategies.",
+            "item_type_id": 1,
+            "collection_id": 4,
+            "submitter_id": "u6",
+            "status": "published",
+            "embargo_until": null,
+            "created_at": "2025-01-01T08:00:00Z",
+            "updated_at": "2025-01-01T08:00:00Z",
+            "views": 345,
+            "downloads": 3450,
+            "pages": 287,
+            "publisher": "University Archives",
+            "thumbnail": "https://images.unsplash.com/photo-1565011471985-8a450248b005?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjbGltYXRlJTIwY2hhbmdlJTIwZW52aXJvbm1lbnR8ZW58MXx8fHwxNzY4ODAwNDk4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+        },
+        {
+            "id": "i12",
+            "title": "Advanced Data Structures and Algorithms",
+            "abstract": "In-depth exploration of complex data structures including trees, graphs, and advanced algorithmic techniques.",
+            "item_type_id": 6,
+            "collection_id": 1,
+            "submitter_id": "u7",
+            "status": "published",
+            "embargo_until": null,
+            "created_at": "2023-01-01T08:00:00Z",
+            "updated_at": "2023-01-01T08:00:00Z",
+            "views": 2210,
+            "downloads": 22100,
+            "pages": 612,
+            "publisher": "Tech Education Publishing"
+        },
+        {
+            "id": "i13",
+            "title": "Blockchain Technology in Financial Services",
+            "abstract": "Proceedings from the International Conference on Blockchain, featuring cutting-edge research on decentralized finance.",
+            "item_type_id": 5,
+            "collection_id": 1,
+            "submitter_id": "u1",
+            "status": "published",
+            "embargo_until": null,
+            "created_at": "2024-01-01T08:00:00Z",
+            "updated_at": "2024-01-01T08:00:00Z",
+            "views": 678,
+            "downloads": 6780,
+            "pages": 156,
+            "publisher": "IEEE",
+            "thumbnail": "https://images.unsplash.com/photo-1590286162167-70fb467846ae?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxibG9ja2NoYWluJTIwY3J5cHRvY3VycmVuY3l8ZW58MXx8fHwxNzY4ODA0NDQ0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+            "hasVideo": true
+        },
+        {
+            "id": "i14",
+            "title": "Cognitive Psychology: Modern Perspectives",
+            "abstract": "Exploration of contemporary cognitive psychology, including memory, attention, perception, and decision-making processes.",
+            "item_type_id": 6,
+            "collection_id": 3,
+            "submitter_id": "u2",
+            "status": "published",
+            "embargo_until": null,
+            "created_at": "2022-01-01T08:00:00Z",
+            "updated_at": "2022-01-01T08:00:00Z",
+            "views": 1865,
+            "downloads": 18650,
+            "pages": 523,
+            "publisher": "Psychology Press",
+            "thumbnail": "https://images.unsplash.com/photo-1761637755331-562c6529ace6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwc3ljaG9sb2d5JTIwYnJhaW4lMjBzY2llbmNlfGVufDF8fHx8MTc2ODgwNDQ0NHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+        },
+        {
+            "id": "i15",
+            "title": "Renewable Energy Systems: Design and Optimization",
+            "abstract": "Latest research on renewable energy system design, optimization techniques, and sustainable power generation.",
+            "item_type_id": 3,
+            "collection_id": 4,
+            "submitter_id": "u5",
+            "status": "published",
+            "embargo_until": null,
+            "created_at": "2025-01-01T08:00:00Z",
+            "updated_at": "2025-01-01T08:00:00Z",
+            "views": 542,
+            "downloads": 5420,
+            "pages": 45,
+            "publisher": "Energy Research Journal",
+            "thumbnail": "https://images.unsplash.com/photo-1628206554160-63e8c921e398?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZW5ld2FibGUlMjBlbmVyZ3klMjBzb2xhcnxlbnwxfHx8fDE3Njg3MjM0NDB8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+            "hasVideo": true
+        },
+        {
+            "id": "i16",
+            "title": "Neural Networks and Deep Learning",
+            "abstract": "Comprehensive study of neural network architectures and deep learning methodologies for artificial intelligence.",
+            "item_type_id": 3,
+            "collection_id": 1,
+            "submitter_id": "u3",
+            "status": "published",
+            "embargo_until": null,
+            "created_at": "2024-01-01T08:00:00Z",
+            "updated_at": "2024-01-01T08:00:00Z",
+            "views": 3120,
+            "downloads": 31200,
+            "pages": 67,
+            "publisher": "AI Research Quarterly",
+            "thumbnail": "https://images.unsplash.com/photo-1717501219263-9aa2d6a768d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxuZXVyYWwlMjBuZXR3b3JrJTIwYWl8ZW58MXx8fHwxNzY4ODAxNDM5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+        },
+        {
+            "id": "i17",
+            "title": "Economic Impact of Digital Transformation",
+            "abstract": "Collection of case studies analyzing the economic effects of digital transformation across various industries.",
+            "item_type_id": 4,
+            "collection_id": 1,
+            "submitter_id": "u4",
+            "status": "published",
+            "embargo_until": null,
+            "created_at": "2023-01-01T08:00:00Z",
+            "updated_at": "2023-01-01T08:00:00Z",
+            "views": 489,
+            "downloads": 4890,
+            "pages": 234,
+            "publisher": "Business Economics Press"
+        },
+        {
+            "id": "i18",
+            "title": "Modern Web Development Practices",
+            "abstract": "Complete guide to modern web development, covering React, TypeScript, and full-stack application architecture.",
+            "item_type_id": 6,
+            "collection_id": 1,
+            "submitter_id": "u6",
+            "status": "published",
+            "embargo_until": null,
+            "created_at": "2025-01-01T08:00:00Z",
+            "updated_at": "2025-01-01T08:00:00Z",
+            "views": 2780,
+            "downloads": 27800,
+            "pages": 489,
+            "publisher": "Web Dev Publishing",
+            "thumbnail": "https://images.unsplash.com/photo-1664854953181-b12e6dda8b7c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXRhJTIwc3RydWN0dXJlcyUyMHByb2dyYW1taW5nfGVufDF8fHx8MTc2ODgwNDQ0M3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+            "hasVideo": true
+        },
+        {
+            "id": "i19",
+            "title": "Artificial Intelligence Ethics and Society",
+            "abstract": "Critical examination of ethical considerations in AI development and deployment, including bias, privacy, and accountability.",
+            "item_type_id": 3,
+            "collection_id": 1,
+            "submitter_id": "u7",
+            "status": "published",
+            "embargo_until": null,
+            "created_at": "2024-01-01T08:00:00Z",
+            "updated_at": "2024-01-01T08:00:00Z",
+            "views": 1245,
+            "downloads": 12450,
+            "pages": 52,
+            "publisher": "Ethics in Technology Journal"
+        },
+        {
+            "id": "i20",
+            "title": "Biomedical Engineering Fundamentals",
+            "abstract": "Introduction to biomedical engineering principles, medical device design, and healthcare technology innovation.",
+            "item_type_id": 6,
+            "collection_id": 4,
+            "submitter_id": "u1",
+            "status": "published",
+            "embargo_until": null,
+            "created_at": "2023-01-01T08:00:00Z",
+            "updated_at": "2023-01-01T08:00:00Z",
+            "views": 932,
+            "downloads": 9320,
+            "pages": 398,
+            "publisher": "Medical Engineering Press"
+        },
+        {
+            "id": "i21",
+            "title": "Cybersecurity in the Modern Enterprise",
+            "abstract": "Latest developments in enterprise cybersecurity, including threat detection, incident response, and security architecture.",
+            "item_type_id": 5,
+            "collection_id": 1,
+            "submitter_id": "u2",
+            "status": "published",
+            "embargo_until": null,
+            "created_at": "2025-01-01T08:00:00Z",
+            "updated_at": "2025-01-01T08:00:00Z",
+            "views": 765,
+            "downloads": 7650,
+            "pages": 189,
+            "publisher": "ACM"
+        },
+        {
+            "id": "i22",
+            "title": "Sustainable Architecture and Green Buildings",
+            "abstract": "Research on sustainable architectural practices and green building technologies for environmental conservation.",
+            "item_type_id": 1,
+            "collection_id": 4,
+            "submitter_id": "u3",
+            "status": "published",
+            "embargo_until": null,
+            "created_at": "2024-01-01T08:00:00Z",
+            "updated_at": "2024-01-01T08:00:00Z",
+            "views": 412,
+            "downloads": 4120,
+            "pages": 312,
+            "publisher": "Architecture Research Archive",
+            "thumbnail": "https://images.unsplash.com/photo-1615142561587-a7e1209874c9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhcmNoaXRlY3R1cmUlMjBzdXN0YWluYWJsZSUyMGJ1aWxkaW5nfGVufDF8fHx8MTc2ODgwNDQ0NXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+            "hasVideo": true
+        },
+        {
+            "id": "i23",
+            "title": "Introduction to Nanotechnology",
+            "abstract": "Comprehensive introduction to nanotechnology, covering nanomaterials, fabrication techniques, and applications.",
+            "item_type_id": 6,
+            "collection_id": 2,
+            "submitter_id": "u4",
+            "status": "published",
+            "embargo_until": null,
+            "created_at": "2023-01-01T08:00:00Z",
+            "updated_at": "2023-01-01T08:00:00Z",
+            "views": 1189,
+            "downloads": 11890,
+            "pages": 445,
+            "publisher": "Science Publishers Inc",
+            "thumbnail": "https://images.unsplash.com/photo-1738168504614-6dfd132cedae?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxuYW5vdGVjaG5vbG9neSUyMHNjaWVuY2V8ZW58MXx8fHwxNzY4ODA0NDQ1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+        },
+        {
+            "id": "i24",
+            "title": "Social Media and Political Discourse",
+            "abstract": "Analysis of social media's influence on political communication, public opinion, and democratic processes.",
+            "item_type_id": 3,
+            "collection_id": 3,
+            "submitter_id": "u5",
+            "status": "published",
+            "embargo_until": null,
+            "created_at": "2025-01-01T08:00:00Z",
+            "updated_at": "2025-01-01T08:00:00Z",
+            "views": 634,
+            "downloads": 6340,
+            "pages": 38,
+            "publisher": "Communication Studies Journal"
+        }
+    ],
+    "files": [
+        {
+            "id": "f1",
+            "item_id": "i1",
+            "file_name": "library_repository_thesis.pdf",
+            "file_path": "/uploads/2026/library_repository_thesis.pdf",
+            "mime_type": "application/pdf",
+            "file_size": 2457600,
+            "checksum": "abc123checksum",
+            "created_at": "2026-01-05T08:10:00Z"
+        },
+        {
+            "id": "f2",
+            "item_id": "i2",
+            "file_name": "quantum_physics_dissertation.pdf",
+            "file_path": "/uploads/2026/quantum_physics_dissertation.pdf",
+            "mime_type": "application/pdf",
+            "file_size": 3200000,
+            "checksum": "def456checksum",
+            "created_at": "2026-01-07T08:10:00Z"
+        },
+        {
+            "id": "f3",
+            "item_id": "i3",
+            "file_name": "african_literature_article.pdf",
+            "file_path": "/uploads/2026/african_literature_article.pdf",
+            "mime_type": "application/pdf",
+            "file_size": 1800000,
+            "checksum": "ghi789checksum",
+            "created_at": "2026-01-09T08:10:00Z"
+        },
+        {
+            "id": "f4",
+            "item_id": "i4",
+            "file_name": "sustainable_engineering_paper.pdf",
+            "file_path": "/uploads/2026/sustainable_engineering_paper.pdf",
+            "mime_type": "application/pdf",
+            "file_size": 2100000,
+            "checksum": "jkl012checksum",
+            "created_at": "2026-01-11T08:10:00Z"
+        },
+        {
+            "id": "f5",
+            "item_id": "i5",
+            "file_name": "machine_learning_healthcare_dissertation.pdf",
+            "file_path": "/uploads/2026/machine_learning_healthcare_dissertation.pdf",
+            "mime_type": "application/pdf",
+            "file_size": 2800000,
+            "checksum": "mno345checksum",
+            "created_at": "2026-01-13T08:10:00Z"
+        },
+        {
+            "id": "f6",
+            "item_id": "i6",
+            "file_name": "african_folktales_article.pdf",
+            "file_path": "/uploads/2026/african_folktales_article.pdf",
+            "mime_type": "application/pdf",
+            "file_size": 1500000,
+            "checksum": "pqr678checksum",
+            "created_at": "2026-01-15T08:10:00Z"
+        },
+        {
+            "id": "f7",
+            "item_id": "i7",
+            "file_name": "renewable_energy_design_paper.pdf",
+            "file_path": "/uploads/2026/renewable_energy_design_paper.pdf",
+            "mime_type": "application/pdf",
+            "file_size": 2400000,
+            "checksum": "stu901checksum",
+            "created_at": "2026-01-17T08:10:00Z"
+        },
+        {
+            "id": "f8",
+            "item_id": "i8",
+            "file_name": "data_structures_book_chapter.pdf",
+            "file_path": "/uploads/2026/data_structures_book_chapter.pdf",
+            "mime_type": "application/pdf",
+            "file_size": 1900000,
+            "checksum": "vwx234checksum",
+            "created_at": "2026-01-19T08:10:00Z"
+        },
+        {
+            "id": "f9",
+            "item_id": "i9",
+            "file_name": "introduction_to_quantum_computing.pdf",
+            "file_path": "/uploads/2024/introduction_to_quantum_computing.pdf",
+            "mime_type": "application/pdf",
+            "file_size": 456000,
+            "checksum": "abc9checksum",
+            "created_at": "2024-01-01T08:10:00Z"
+        },
+        {
+            "id": "f10",
+            "item_id": "i10",
+            "file_name": "machine_learning_in_healthcare_a_systematic_review.pdf",
+            "file_path": "/uploads/2023/machine_learning_in_healthcare_a_systematic_review.pdf",
+            "mime_type": "application/pdf",
+            "file_size": 34000,
+            "checksum": "def10checksum",
+            "created_at": "2023-01-01T08:10:00Z"
+        },
+        {
+            "id": "f11",
+            "item_id": "i11",
+            "file_name": "climate_change_and_urban_development.pdf",
+            "file_path": "/uploads/2025/climate_change_and_urban_development.pdf",
+            "mime_type": "application/pdf",
+            "file_size": 287000,
+            "checksum": "ghi11checksum",
+            "created_at": "2025-01-01T08:10:00Z"
+        },
+        {
+            "id": "f12",
+            "item_id": "i12",
+            "file_name": "advanced_data_structures_and_algorithms.epub",
+            "file_path": "/uploads/2023/advanced_data_structures_and_algorithms.epub",
+            "mime_type": "application/epub+zip",
+            "file_size": 612000,
+            "checksum": "jkl12checksum",
+            "created_at": "2023-01-01T08:10:00Z"
+        },
+        {
+            "id": "f13",
+            "item_id": "i13",
+            "file_name": "blockchain_technology_in_financial_services.pdf",
+            "file_path": "/uploads/2024/blockchain_technology_in_financial_services.pdf",
+            "mime_type": "application/pdf",
+            "file_size": 156000,
+            "checksum": "mno13checksum",
+            "created_at": "2024-01-01T08:10:00Z"
+        },
+        {
+            "id": "f14",
+            "item_id": "i14",
+            "file_name": "cognitive_psychology_modern_perspectives.pdf",
+            "file_path": "/uploads/2022/cognitive_psychology_modern_perspectives.pdf",
+            "mime_type": "application/pdf",
+            "file_size": 523000,
+            "checksum": "pqr14checksum",
+            "created_at": "2022-01-01T08:10:00Z"
+        },
+        {
+            "id": "f15",
+            "item_id": "i15",
+            "file_name": "renewable_energy_systems_design_and_optimization.pdf",
+            "file_path": "/uploads/2025/renewable_energy_systems_design_and_optimization.pdf",
+            "mime_type": "application/pdf",
+            "file_size": 45000,
+            "checksum": "stu15checksum",
+            "created_at": "2025-01-01T08:10:00Z"
+        },
+        {
+            "id": "f16",
+            "item_id": "i16",
+            "file_name": "neural_networks_and_deep_learning.pdf",
+            "file_path": "/uploads/2024/neural_networks_and_deep_learning.pdf",
+            "mime_type": "application/pdf",
+            "file_size": 67000,
+            "checksum": "vwx16checksum",
+            "created_at": "2024-01-01T08:10:00Z"
+        },
+        {
+            "id": "f17",
+            "item_id": "i17",
+            "file_name": "economic_impact_of_digital_transformation.doc",
+            "file_path": "/uploads/2023/economic_impact_of_digital_transformation.doc",
+            "mime_type": "application/msword",
+            "file_size": 234000,
+            "checksum": "yz17checksum",
+            "created_at": "2023-01-01T08:10:00Z"
+        },
+        {
+            "id": "f18",
+            "item_id": "i18",
+            "file_name": "modern_web_development_practices.pdf",
+            "file_path": "/uploads/2025/modern_web_development_practices.pdf",
+            "mime_type": "application/pdf",
+            "file_size": 489000,
+            "checksum": "abc18checksum",
+            "created_at": "2025-01-01T08:10:00Z"
+        },
+        {
+            "id": "f19",
+            "item_id": "i19",
+            "file_name": "artificial_intelligence_ethics_and_society.pdf",
+            "file_path": "/uploads/2024/artificial_intelligence_ethics_and_society.pdf",
+            "mime_type": "application/pdf",
+            "file_size": 52000,
+            "checksum": "def19checksum",
+            "created_at": "2024-01-01T08:10:00Z"
+        },
+        {
+            "id": "f20",
+            "item_id": "i20",
+            "file_name": "biomedical_engineering_fundamentals.pdf",
+            "file_path": "/uploads/2023/biomedical_engineering_fundamentals.pdf",
+            "mime_type": "application/pdf",
+            "file_size": 398000,
+            "checksum": "ghi20checksum",
+            "created_at": "2023-01-01T08:10:00Z"
+        },
+        {
+            "id": "f21",
+            "item_id": "i21",
+            "file_name": "cybersecurity_in_the_modern_enterprise.pdf",
+            "file_path": "/uploads/2025/cybersecurity_in_the_modern_enterprise.pdf",
+            "mime_type": "application/pdf",
+            "file_size": 189000,
+            "checksum": "jkl21checksum",
+            "created_at": "2025-01-01T08:10:00Z"
+        },
+        {
+            "id": "f22",
+            "item_id": "i22",
+            "file_name": "sustainable_architecture_and_green_buildings.pdf",
+            "file_path": "/uploads/2024/sustainable_architecture_and_green_buildings.pdf",
+            "mime_type": "application/pdf",
+            "file_size": 312000,
+            "checksum": "mno22checksum",
+            "created_at": "2024-01-01T08:10:00Z"
+        },
+        {
+            "id": "f23",
+            "item_id": "i23",
+            "file_name": "introduction_to_nanotechnology.epub",
+            "file_path": "/uploads/2023/introduction_to_nanotechnology.epub",
+            "mime_type": "application/epub+zip",
+            "file_size": 445000,
+            "checksum": "pqr23checksum",
+            "created_at": "2023-01-01T08:10:00Z"
+        },
+        {
+            "id": "f24",
+            "item_id": "i24",
+            "file_name": "social_media_and_political_discourse.pdf",
+            "file_path": "/uploads/2025/social_media_and_political_discourse.pdf",
+            "mime_type": "application/pdf",
+            "file_size": 38000,
+            "checksum": "stu24checksum",
+            "created_at": "2025-01-01T08:10:00Z"
+        }
+    ],
+    "metadata_fields": [
+        {
+            "id": 1,
+            "name": "author",
+            "label": "Author",
+            "data_type": "string",
+            "is_required": true
+        },
+        {
+            "id": 2,
+            "name": "advisor",
+            "label": "Supervisor",
+            "data_type": "string",
+            "is_required": false
+        },
+        {
+            "id": 3,
+            "name": "department",
+            "label": "Department",
+            "data_type": "string",
+            "is_required": true
+        },
+        {
+            "id": 4,
+            "name": "keywords",
+            "label": "Keywords",
+            "data_type": "string",
+            "is_required": false
+        },
+        {
+            "id": 5,
+            "name": "publication_year",
+            "label": "Publication Year",
+            "data_type": "number",
+            "is_required": true
+        },
+        {
+            "id": 6,
+            "name": "doi",
+            "label": "DOI",
+            "data_type": "string",
+            "is_required": false
+        },
+        {
+            "id": 7,
+            "name": "language",
+            "label": "Language",
+            "data_type": "string",
+            "is_required": false
+        }
+    ],
+    "item_metadata": [
+        {
+            "id": 1,
+            "item_id": "i1",
+            "metadata_field_id": 1,
+            "value": "John Musa"
+        },
+        {
+            "id": 2,
+            "item_id": "i1",
+            "metadata_field_id": 2,
+            "value": "Dr. Amina Bello"
+        },
+        {
+            "id": 3,
+            "item_id": "i1",
+            "metadata_field_id": 3,
+            "value": "Computer Science"
+        },
+        {
+            "id": 4,
+            "item_id": "i1",
+            "metadata_field_id": 4,
+            "value": "repository, digital library, open access"
+        },
+        {
+            "id": 5,
+            "item_id": "i1",
+            "metadata_field_id": 5,
+            "value": "2026"
+        },
+        {
+            "id": 6,
+            "item_id": "i2",
+            "metadata_field_id": 1,
+            "value": "Dr. Emmanuel Adebayo"
+        },
+        {
+            "id": 7,
+            "item_id": "i2",
+            "metadata_field_id": 3,
+            "value": "Physics"
+        },
+        {
+            "id": 8,
+            "item_id": "i2",
+            "metadata_field_id": 4,
+            "value": "quantum computing, physics"
+        },
+        {
+            "id": 9,
+            "item_id": "i2",
+            "metadata_field_id": 5,
+            "value": "2026"
+        },
+        {
+            "id": 10,
+            "item_id": "i3",
+            "metadata_field_id": 1,
+            "value": "Prof. Ngozi Eze"
+        },
+        {
+            "id": 11,
+            "item_id": "i3",
+            "metadata_field_id": 3,
+            "value": "Literature"
+        },
+        {
+            "id": 12,
+            "item_id": "i3",
+            "metadata_field_id": 4,
+            "value": "modernism, African literature"
+        },
+        {
+            "id": 13,
+            "item_id": "i3",
+            "metadata_field_id": 5,
+            "value": "2025"
+        },
+        {
+            "id": 14,
+            "item_id": "i3",
+            "metadata_field_id": 6,
+            "value": "10.1234/abcd"
+        },
+        {
+            "id": 15,
+            "item_id": "i4",
+            "metadata_field_id": 1,
+            "value": "Sarah Okafor"
+        },
+        {
+            "id": 16,
+            "item_id": "i4",
+            "metadata_field_id": 2,
+            "value": "Dr. Emmanuel Adebayo"
+        },
+        {
+            "id": 17,
+            "item_id": "i4",
+            "metadata_field_id": 3,
+            "value": "Mechanical Engineering"
+        },
+        {
+            "id": 18,
+            "item_id": "i4",
+            "metadata_field_id": 4,
+            "value": "sustainability, engineering"
+        },
+        {
+            "id": 19,
+            "item_id": "i4",
+            "metadata_field_id": 5,
+            "value": "2026"
+        },
+        {
+            "id": 20,
+            "item_id": "i4",
+            "metadata_field_id": 7,
+            "value": "English"
+        }
+    ],
+    "licenses": [
+        {
+            "id": 1,
+            "name": "Creative Commons Attribution 4.0",
+            "description": "Allows redistribution with attribution",
+            "url": "https://creativecommons.org/licenses/by/4.0/"
+        },
+        {
+            "id": 2,
+            "name": "Creative Commons Attribution-NonCommercial 4.0",
+            "description": "Allows redistribution with attribution, non-commercial use",
+            "url": "https://creativecommons.org/licenses/by-nc/4.0/"
+        }
+    ],
+    "access_policies": [
+        {
+            "id": 1,
+            "item_id": "i1",
+            "role_id": 5,
+            "can_view": true,
+            "can_download": true
+        },
+        {
+            "id": 2,
+            "item_id": "i2",
+            "role_id": 5,
+            "can_view": true,
+            "can_download": false
+        },
+        {
+            "id": 3,
+            "item_id": "i3",
+            "role_id": 4,
+            "can_view": true,
+            "can_download": true
+        },
+        {
+            "id": 4,
+            "item_id": "i4",
+            "role_id": 3,
+            "can_view": true,
+            "can_download": true
+        }
+    ],
+    "statistics": [
+        {
+            "id": 1,
+            "item_id": "i1",
+            "views": 12,
+            "downloads": 5,
+            "last_accessed": "2026-01-10T12:00:00Z"
+        },
+        {
+            "id": 2,
+            "item_id": "i2",
+            "views": 8,
+            "downloads": 2,
+            "last_accessed": "2026-01-11T12:00:00Z"
+        },
+        {
+            "id": 3,
+            "item_id": "i3",
+            "views": 15,
+            "downloads": 7,
+            "last_accessed": "2026-01-12T12:00:00Z"
+        },
+        {
+            "id": 4,
+            "item_id": "i4",
+            "views": 3,
+            "downloads": 0,
+            "last_accessed": "2026-01-13T12:00:00Z"
+        }
+    ],
+    "preservation_logs": [
+        {
+            "id": 1,
+            "file_id": "f1",
+            "action": "checksum_verified",
+            "details": "File integrity verified successfully",
+            "logged_at": "2026-01-07T14:00:00Z"
+        },
+        {
+            "id": 2,
+            "file_id": "f2",
+            "action": "checksum_verified",
+            "details": "File integrity verified successfully",
+            "logged_at": "2026-01-08T14:00:00Z"
+        },
+        {
+            "id": 3,
+            "file_id": "f3",
+            "action": "migrated",
+            "details": "File migrated to new storage format",
+            "logged_at": "2026-01-10T14:00:00Z"
+        },
+        {
+            "id": 4,
+            "file_id": "f4",
+            "action": "checksum_verified",
+            "details": "File integrity verified successfully",
+            "logged_at": "2026-01-12T14:00:00Z"
+        }
+    ]
+}
