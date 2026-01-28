@@ -1,5 +1,5 @@
 import { use, useMemo } from "react";
-import { HomeContext } from "@/states/providers/homeProvider";
+import { HomeContext } from "@/states/providers/homeContext";
 
 export function useSearchQuery() {
   const {
@@ -17,6 +17,12 @@ export function useSearchQuery() {
       changeSearchTerm,
       changeSearchSortBy,
     }),
-    [searchQuery],
+    [
+      searchQuery,
+      changeQuery,
+      changeSearching,
+      changeSearchTerm,
+      changeSearchSortBy,
+    ],
   );
 }

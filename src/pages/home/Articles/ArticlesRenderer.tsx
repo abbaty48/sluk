@@ -2,7 +2,6 @@ import { Article } from "./Article";
 import Masonry from "react-masonry-css";
 import { FileBox, BookOpen } from "lucide-react";
 import { useViewMode } from "@/hooks/useViewMode";
-import type { Dispatch, SetStateAction } from "react";
 import type { TEnrichedArticle } from "@/lib/types/TArticle";
 
 type Props = Partial<{
@@ -10,7 +9,6 @@ type Props = Partial<{
   inSearchMode: boolean;
   onBrowseAll: () => void;
   articles: TEnrichedArticle[];
-  setShowAlert: Dispatch<SetStateAction<boolean>>
 }>;
 
 function EmptyState({ onBrowseAll }: Props) {
@@ -25,7 +23,8 @@ function EmptyState({ onBrowseAll }: Props) {
             No Articles Found
           </h3>
           <p className="text-gray-600 mb-6">
-            We couldn't find any articles matching your criteria. Try adjusting your search terms or browse our collection.
+            We couldn't find any articles matching your criteria. Try adjusting
+            your search terms or browse our collection.
           </p>
         </div>
         <div className="flex items-center justify-center">
@@ -50,15 +49,17 @@ function GridView({ articles }: { articles: TEnrichedArticle[] | undefined }) {
     500: 1,
   };
 
-  return <Masonry
-    breakpointCols={breakpointColumnsObj}
-    className="flex gap-4"
-    columnClassName="flex flex-col gap-4"
-  >
-    {articles?.map((article) => (
-      <Article key={article.id} item={article} />
-    ))}
-  </Masonry>
+  return (
+    <Masonry
+      breakpointCols={breakpointColumnsObj}
+      className="flex gap-4"
+      columnClassName="flex flex-col gap-4"
+    >
+      {articles?.map((article) => (
+        <Article key={article.id} item={article} />
+      ))}
+    </Masonry>
+  );
 }
 
 function ListView({ articles }: { articles: TEnrichedArticle[] | undefined }) {
@@ -68,10 +69,14 @@ function ListView({ articles }: { articles: TEnrichedArticle[] | undefined }) {
         <Article key={article.id} item={article} />
       ))}
     </div>
-  )
+  );
 }
 
-export function ArticlesRenderer({ articles, inSearchMode, onBrowseAll: _onBrowseAll }: Props) {
+export function ArticlesRenderer({
+  articles,
+  inSearchMode,
+  onBrowseAll: _onBrowseAll,
+}: Props) {
   const { viewMode } = useViewMode();
 
   return articles?.length === 0 || inSearchMode ? (
@@ -79,6 +84,9 @@ export function ArticlesRenderer({ articles, inSearchMode, onBrowseAll: _onBrows
       <EmptyState onBrowseAll={_onBrowseAll} />
       <GridView articles={articles?.slice(0, 9)} />
     </>
-  ) : viewMode === "grid" ? <GridView articles={articles} />
-    : <ListView articles={articles} />;
+  ) : viewMode === "grid" ? (
+    <GridView articles={articles} />
+  ) : (
+    <ListView articles={articles} />
+  );
 }

@@ -1,7 +1,7 @@
+import { ArticlesFilter } from "@/pages/home/ArticlesFitler/ArticlesFitler";
 import { Library, Filter, FilterX, Grid3X3, List } from "lucide-react";
 import { HomeProvider } from "@/states/providers/homeProvider";
 import { HomeBookMark } from "@/components/HeaderBookmark";
-import { SearchFilter } from "@/pages/home/SearchFilter";
 import { Articles } from "@/pages/home/Articles/Articles";
 import { useFilterState } from "@/hooks/useFilterState";
 import { SearchBar } from "@/components/SearchBar";
@@ -93,7 +93,7 @@ export function Home() {
     <HomeProvider>
       <div className="grid md:grid-cols-[max-content] md:grid-rows-[auto_1fr]">
         <HomeHeader />
-        <SearchFilter />
+        <ArticlesFilter />
         <Articles />
       </div>
     </HomeProvider>

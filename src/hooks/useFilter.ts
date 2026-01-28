@@ -1,47 +1,86 @@
-import type { ArticleFilters } from "@/lib/types/IArticle";
-import { useState } from "react";
+// import { useArticle } from "@/pages/home/Articles/useArticle";
+import type {
+  ArticleState,
+  ArticleFilterAction,
+} from "@/pages/home/ArticlesFitler/ArticleContext";
+import { useCallback, useMemo, type ActionDispatch } from "react";
 
-export function useFilter() {
-    const [filters, setFilters] = useState<ArticleFilters>({
-        category: 'All',
-        year: [1950, 2026],
-        fileType: 'All',
-        language: 'All',
-        author: '',
-    });
+export function useFilter(
+  state: ArticleState,
+  dispatch: ActionDispatch<[action: ArticleFilterAction]>,
+) {
+  const handleCategoryChange = useCallback(
+    (value: string | number | readonly string[] | undefined) => {
+      dispatch({
+        type: "SET_CATEGORY",
+        payload: value,
+      });
+    },
+    [dispatch],
+  );
 
-    const onFilterChange = (newFilters: ArticleFilters) => {
-        setFilters(newFilters);
-    };
+  const handleYearChange = useCallback(
+    (newValue: number[]) => {
+      dispatch({
+        type: "SET_YEARS",
+        payload: newValue,
+      });
+    },
+    [dispatch],
+  );
 
-    const handleCategoryChange = (category: string) => {
-        onFilterChange({ ...filters, category });
-    };
+  const handleFileTypeChange = useCallback(
+    (value: string) => {
+      dispatch({
+        type: "SET_FILE_TYPE",
+        payload: value,
+      });
+    },
+    [dispatch],
+  );
 
-    const handleYearChange = (newValue: number[]) => {
-        onFilterChange({ ...filters, year: newValue });
-    };
+  const handleAuthorChange = useCallback(
+    (author: string) => {
+      dispatch({
+        type: "SET_AUTHOR",
+        payload: author,
+      });
+    },
+    [dispatch],
+  );
 
-    const handleFileTypeChange = (value: string) => {
-        onFilterChange({ ...filters, fileType: value });
-    };
+  const handleLanguageChange = useCallback(
+    (language: string) => {
+      dispatch({
+        type: "SET_LANGUAGE",
+        payload: language,
+      });
+    },
+    [dispatch],
+  );
 
-    const handleAuthorChange = (author: string) => {
-        onFilterChange({ ...filters, author });
-    };
+  const resetFilter = useCallback(() => {
+    dispatch({ type: "RESET" });
+  }, [dispatch]);
 
-    const handleLanguageChange = (language: string) => {
-        onFilterChange({ ...filters, language });
-    };
-
-    return {
-        filters,
-        onFilterChange,
-        handleYearChange,
-        handleAuthorChange,
-        handleCategoryChange,
-        handleLanguageChange,
-        handleFileTypeChange
-    }
-
+  return useMemo(
+    () => ({
+      ...state,
+      resetFilter,
+      handleYearChange,
+      handleAuthorChange,
+      handleCategoryChange,
+      handleFileTypeChange,
+      handleLanguageChange,
+    }),
+    [
+      state,
+      resetFilter,
+      handleAuthorChange,
+      handleCategoryChange,
+      handleFileTypeChange,
+      handleLanguageChange,
+      handleYearChange,
+    ],
+  );
 }

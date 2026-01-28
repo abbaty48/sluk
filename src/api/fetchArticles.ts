@@ -3,8 +3,8 @@ import type {
   ArticleFilters,
   ArticleSearchParams,
 } from "@/lib/types/IArticle";
-import { defaultArticleFilters } from "@/lib/types/IArticle";
 import db from "@/api/db.json";
+import { defaultArticleFilters } from "@/lib/types/IArticle";
 import type { TArticle, TEnrichedArticle } from "@/lib/types/TArticle";
 
 export function searchArticles(term: string, sortBy: SortOption = "relevance") {
@@ -131,16 +131,17 @@ export function applyArticleFilters(
 
   let filtered = articles;
 
-  if (filter.category) {
+  if (filter.category && filter.category !== "all") {
     const type = articleTypes.find(
-      (item) => item.name.toLowerCase() === filter.category.toLowerCase(),
+      (item) =>
+        item.name.toLowerCase() === (filter.category as string).toLowerCase(),
     );
     if (type) {
       filtered = filtered.filter((article) => article.item_type_id === type.id);
     }
   }
 
-  if (filter.fileType) {
+  if (filter.fileType && filter.fileType !== "all") {
     filtered = filtered.filter((article) => {
       const articleFiles = files.filter((file) => file.item_id === article.id);
       return articleFiles.some((file) =>
@@ -149,7 +150,7 @@ export function applyArticleFilters(
     });
   }
 
-  if (filter.author) {
+  if (filter.author && filter.author.trim() !== "") {
     filtered = filtered.filter((article) => {
       const user = users.find((u) => u.id === article.submitter_id);
       return (
@@ -159,14 +160,19 @@ export function applyArticleFilters(
     });
   }
 
-  if (filter.year && filter.year.length > 0) {
+  if (filter.year && filter.year.length === 2) {
+    const [minYear, maxYear] = filter.year;
     filtered = filtered.filter((article) => {
       const articleYear = new Date(article.created_at).getFullYear();
-      return filter.year.includes(articleYear);
+      return articleYear >= minYear && articleYear <= maxYear;
     });
   }
 
-  // Language filter - assuming language is not in db, skip or add if needed
+  if (filter.language && filter.language !== "all") {
+    // Language filter implementation - this would need a language field in the database
+    // For now, we'll skip this filter as the database doesn't have language information
+    // You can add this once the database schema supports it
+  }
 
   return filtered;
 }
@@ -174,12 +180,18 @@ export function applyArticleFilters(
 export function getArticles<
   Params extends ArticleSearchParams & { page: number },
 >({
+  page,
   term = "",
   limit = 10,
   sortBy = "relevance",
   filter = defaultArticleFilters,
-  page,
-}: Params) {
+}: Params): Promise<{
+  page: number;
+  limit: number;
+  hasMore: boolean;
+  articles: TEnrichedArticle[];
+  total: number;
+}> {
   const allArticles = db.items as TArticle[];
 
   let filteredArticles = allArticles;

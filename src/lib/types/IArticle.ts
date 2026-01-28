@@ -1,5 +1,5 @@
 export interface ArticleFilters {
-  category: string;
+  category: string | number | readonly string[] | undefined;
   year: number[];
   fileType: string;
   author: string;
