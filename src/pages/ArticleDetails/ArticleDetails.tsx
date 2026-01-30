@@ -483,7 +483,7 @@ export function ArticleDetails() {
                       </Button>
                     </a>
                   </div>
-                  <div className="border rounded-lg overflow-hidden bg-muted min-h-[600px]">
+                  <div className="border rounded-lg overflow-hidden bg-muted min-h-150">
                     <Suspense
                       fallback={
                         <div className="flex items-center justify-center h-96">

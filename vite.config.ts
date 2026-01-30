@@ -30,6 +30,7 @@ export default defineConfig({
   },
   build: {
     target: "es2020",
+    sourcemap: false,
     commonjsOptions: {
       include: [/node_modules/],
       transformMixedEsModules: true,
