@@ -1,0 +1,51 @@
+{
+  "backToHome": "العودة إلى الصفحة الرئيسية",
+
+  "articleDetails": "تفاصيل المقالة",
+  "abstract": "الملخص",
+  "details": "التفاصيل",
+  "author": "المؤلف",
+  "publisher": "الناشر",
+  "publicationDate": "تاريخ النشر",
+  "pages": "الصفحات",
+  "views": "المشاهدات",
+  "downloads": "التنزيلات",
+  "category": "الفئة",
+  "collection": "المجموعة",
+  "community": "المجتمع",
+  "status": "الحالة",
+
+  "readAloud": "القراءة بصوت عالٍ",
+  "stopReading": "إيقاف القراءة",
+  "pauseReading": "إيقاف مؤقت",
+  "resumeReading": "استئناف القراءة",
+  "download": "تحميل",
+  "share": "مشاركة",
+  "bookmark": "إضافة إلى المفضلة",
+
+  "viewDocument": "عرض المستند",
+  "loadingDocument": "جاري تحميل المستند...",
+  "documentNotAvailable": "المستند غير متاح",
+
+  "watchVideo": "مشاهدة الفيديو",
+  "videoNotAvailable": "الفيديو غير متاح",
+
+  "changeLanguage": "تغيير اللغة",
+  "english": "الإنجليزية",
+  "arabic": "العربية",
+  "hausa": "الهوسا",
+  "french": "الفرنسية",
+
+  "loading": "جاري التحميل...",
+  "error": "خطأ",
+  "notFound": "المقالة غير موجودة",
+
+  "errorLoadingArticle": "خطأ في تحميل المقالة",
+  "speechNotSupported": "خاصية تحويل النص إلى كلام غير مدعومة في متصفحك",
+
+  "metadata": "البيانات الوصفية",
+  "keywords": "الكلمات المفتاحية",
+  "language": "اللغة",
+  "fileType": "نوع الملف",
+  "lastUpdated": "آخر تحديث"
+}

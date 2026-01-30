@@ -1,0 +1,51 @@
+{
+  "backToHome": "Retour à l'accueil",
+
+  "articleDetails": "Détails de l'article",
+  "abstract": "Résumé",
+  "details": "Détails",
+  "author": "Auteur",
+  "publisher": "Éditeur",
+  "publicationDate": "Date de publication",
+  "pages": "Pages",
+  "views": "Vues",
+  "downloads": "Téléchargements",
+  "category": "Catégorie",
+  "collection": "Collection",
+  "community": "Communauté",
+  "status": "Statut",
+
+  "readAloud": "Lire à voix haute",
+  "stopReading": "Arrêter la lecture",
+  "pauseReading": "Mettre en pause",
+  "resumeReading": "Reprendre la lecture",
+  "download": "Télécharger",
+  "share": "Partager",
+  "bookmark": "Ajouter aux favoris",
+
+  "viewDocument": "Voir le document",
+  "loadingDocument": "Chargement du document...",
+  "documentNotAvailable": "Document non disponible",
+
+  "watchVideo": "Regarder la vidéo",
+  "videoNotAvailable": "Vidéo non disponible",
+
+  "changeLanguage": "Changer de langue",
+  "english": "Anglais",
+  "arabic": "Arabe",
+  "hausa": "Haoussa",
+  "french": "Français",
+
+  "loading": "Chargement...",
+  "error": "Erreur",
+  "notFound": "Article introuvable",
+
+  "errorLoadingArticle": "Erreur lors du chargement de l'article",
+  "speechNotSupported": "La synthèse vocale n'est pas prise en charge par votre navigateur",
+
+  "metadata": "Métadonnées",
+  "keywords": "Mots-clés",
+  "language": "Langue",
+  "fileType": "Type de fichier",
+  "lastUpdated": "Dernière mise à jour"
+}

@@ -1,0 +1,52 @@
+{
+  "backToHome": "Koma Gida",
+
+  "articleDetails": "Bayanan Labarin",
+  "abstract": "Taƙaitaccen Bayani",
+  "details": "Cikakkun Bayanai",
+  "author": "Marubuci",
+  "publisher": "Mai Bugawa",
+  "publicationDate": "Ranar Bugawa",
+  "pages": "Shafuka",
+  "views": "Kallo",
+  "downloads": "Saukowa",
+  "category": "Nau'i",
+  "collection": "Tarin",
+  "community": "Al'umma",
+  "status": "Matsayi",
+
+  "readAloud": "Karanta da Babbar Murya",
+  "stopReading": "Tsaya da Karatu",
+  "pauseReading": "Dakatar da Karatu",
+  "resumeReading": "Ci gaba da Karatu",
+  "download": "Sauke",
+  "share": "Raba",
+  "bookmark": "Ƙara zuwa Shafi",
+
+  "viewDocument": "Duba Takarda",
+  "loadingDocument": "Ana loda takarda...",
+  "documentNotAvailable": "Takarda ba ta samuwa",
+  "documentNotFound": "Takarda ba a sami labarin ba",
+
+  "watchVideo": "Kalli Bidiyo",
+  "videoNotAvailable": "Bidiyo ba ta samuwa",
+
+  "changeLanguage": "Canza Harshe",
+  "english": "Turanci",
+  "arabic": "Larabci",
+  "hausa": "Hausa",
+  "french": "Faransanci",
+
+  "loading": "Ana lodawa...",
+  "error": "Kuskure",
+  "notFound": "Ba a sami labarin ba",
+
+  "errorLoadingArticle": "Kuskure wajen loda labarin",
+  "speechNotSupported": "Wannan na'urar ba ta goyan bayan juyar rubutu zuwa magana",
+
+  "metadata": "Bayanan Metadata",
+  "keywords": "Kalmomin Muhimman",
+  "language": "Harshe",
+  "fileType": "Nau'in Fayil",
+  "lastUpdated": "An Sabunta Kwanan Nan"
+}

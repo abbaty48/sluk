@@ -61,7 +61,7 @@ function FilterButton() {
 
 function HomeHeader() {
   return (
-    <header className="sticky top-0 bg-background z-10 md:col-start-2 md:col-end-2 lg:flex-1 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 lg:gap-10 p-4 max-h-max">
+    <header className="sticky top-0 bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60 z-50 md:col-start-2 md:col-end-2 lg:flex-1 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 lg:gap-10 p-4 max-h-max">
       <Link to={"/"} className="shrink-0">
         <h1 className="flex items-center text-slate-700 dark:text-slate-300 text-xl sm:text-2xl lg:text-3xl gap-1">
           <Library

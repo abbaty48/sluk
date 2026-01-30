@@ -1,0 +1,51 @@
+{
+  "backToHome": "返回首页",
+
+  "articleDetails": "文章详情",
+  "abstract": "摘要",
+  "details": "详情",
+  "author": "作者",
+  "publisher": "出版商",
+  "publicationDate": "发布日期",
+  "pages": "页数",
+  "views": "浏览量",
+  "downloads": "下载量",
+  "category": "类别",
+  "collection": "合集",
+  "community": "社区",
+  "status": "状态",
+
+  "readAloud": "朗读",
+  "stopReading": "停止朗读",
+  "pauseReading": "暂停朗读",
+  "resumeReading": "继续朗读",
+  "download": "下载",
+  "share": "分享",
+  "bookmark": "书签",
+
+  "viewDocument": "查看文档",
+  "loadingDocument": "文档加载中...",
+  "documentNotAvailable": "文档不可用",
+
+  "watchVideo": "观看视频",
+  "videoNotAvailable": "视频不可用",
+
+  "changeLanguage": "更改语言",
+  "english": "英语",
+  "arabic": "阿拉伯语",
+  "hausa": "豪萨语",
+  "french": "法语",
+
+  "loading": "加载中...",
+  "error": "错误",
+  "notFound": "未找到文章",
+
+  "errorLoadingArticle": "加载文章时出错",
+  "speechNotSupported": "您的浏览器不支持文本转语音功能",
+
+  "metadata": "元数据",
+  "keywords": "关键词",
+  "language": "语言",
+  "fileType": "文件类型",
+  "lastUpdated": "最后更新"
+}

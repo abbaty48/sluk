@@ -1,0 +1,51 @@
+{
+  "backToHome": "Back to Home",
+
+  "articleDetails": "Article Details",
+  "abstract": "Abstract",
+  "details": "Details",
+  "author": "Author",
+  "publisher": "Publisher",
+  "publicationDate": "Publication Date",
+  "pages": "Pages",
+  "views": "Views",
+  "downloads": "Downloads",
+  "category": "Category",
+  "collection": "Collection",
+  "community": "Community",
+  "status": "Status",
+
+  "readAloud": "Read Aloud",
+  "stopReading": "Stop Reading",
+  "pauseReading": "Pause Reading",
+  "resumeReading": "Resume Reading",
+  "download": "Download",
+  "share": "Share",
+  "bookmark": "Bookmark",
+
+  "viewDocument": "View Document",
+  "loadingDocument": "Loading document...",
+  "documentNotAvailable": "Document not available",
+
+  "watchVideo": "Watch Video",
+  "videoNotAvailable": "Video not available",
+
+  "changeLanguage": "Change Language",
+  "english": "English",
+  "arabic": "Arabic",
+  "hausa": "Hausa",
+  "french": "French",
+
+  "loading": "Loading...",
+  "error": "Error",
+  "notFound": "Article not found",
+
+  "errorLoadingArticle": "Error loading article",
+  "speechNotSupported": "Text-to-speech is not supported in your browser",
+
+  "metadata": "Metadata",
+  "keywords": "Keywords",
+  "language": "Language",
+  "fileType": "File Type",
+  "lastUpdated": "Last Updated"
+}

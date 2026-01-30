@@ -1,235 +1,276 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --radius-2xl: calc(var(--radius) + 8px);
-  --radius-3xl: calc(var(--radius) + 12px);
-  --radius-4xl: calc(var(--radius) + 16px);
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
+    --radius-sm: calc(var(--radius) - 4px);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) + 4px);
+    --radius-2xl: calc(var(--radius) + 8px);
+    --radius-3xl: calc(var(--radius) + 12px);
+    --radius-4xl: calc(var(--radius) + 16px);
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-destructive: var(--destructive);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
+    --color-sidebar: var(--sidebar);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
 }
 
 :root {
-  --radius: 0.75rem;
-  /* Material Design 3 - Light Theme tokens */
-  --background: #FFFBFE;
-  /* md_sys_background */
-  --foreground: #1C1B1F;
-  /* md_sys_on_background */
-  --card: #FFFBFE;
-  /* md_sys_surface */
-  --card-foreground: #1C1B1F;
-  /* md_sys_on_surface */
-  --popover: #FFFBFE;
-  /* surface used for popovers */
-  --popover-foreground: #1C1B1F;
-  --primary: #6750A4;
-  /* md_sys_primary */
-  --primary-foreground: #FFFFFF;
-  /* md_sys_on_primary */
-  --secondary: #625B71;
-  /* md_sys_secondary */
-  --secondary-foreground: #FFFFFF;
-  /* md_sys_on_secondary */
-  --muted: #E7E0EC;
-  /* md_sys_surface_variant */
-  --muted-foreground: #49454F;
-  /* md_sys_on_surface_variant */
-  --accent: #6750A4;
-  /* use primary as accent by default */
-  --accent-foreground: #FFFFFF;
-  --destructive: #B3261E;
-  /* md_sys_error */
-  --border: #79747E;
-  /* md_sys_outline */
-  --input: #E7E0EC;
-  /* subtle input surface */
-  --ring: rgba(103, 80, 164, 0.24);
-  /* primary focus ring */
-  --chart-1: #6750A4;
-  --chart-2: #625B71;
-  --chart-3: #7D5260;
-  --card: #FFFFFF;
-  /* md_sys_surface (card surfaces slightly brighter than background) */
-  --chart-5: #34515E;
-  --sidebar: #FFFBFE;
-  --popover: var(--card);
-  /* popovers use surface */
-  --sidebar-primary: #6750A4;
-  --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #625B71;
-  --sidebar-accent-foreground: #FFFFFF;
-  --sidebar-border: #E6E1E5;
-  --sidebar-ring: rgba(103, 80, 164, 0.24);
-  /* State layer colors for MD3 interactions */
-  --state-layer-hover: rgba(103, 80, 164, 0.08);
-  --state-layer-focus: rgba(103, 80, 164, 0.12);
-  --state-layer-pressed: rgba(103, 80, 164, 0.16);
-  /* Elevation shadows (MD3-like approximations) */
-  --elevation-0: none;
-  --elevation-1: 0 1px 2px rgba(16, 24, 40, 0.04), 0 1px 3px rgba(16, 24, 40, 0.06);
-  --elevation-2: 0 2px 6px rgba(16, 24, 40, 0.08);
-  --elevation-3: 0 6px 18px rgba(16, 24, 40, 0.12);
+    --radius: 0.75rem;
+    /* Material Design 3 - Light Theme tokens */
+    --background: #fffbfe;
+    /* md_sys_background */
+    --foreground: #1c1b1f;
+    /* md_sys_on_background */
+    --card: #fffbfe;
+    /* md_sys_surface */
+    --card-foreground: #1c1b1f;
+    /* md_sys_on_surface */
+    --popover: #fffbfe;
+    /* surface used for popovers */
+    --popover-foreground: #1c1b1f;
+    --primary: #6750a4;
+    /* md_sys_primary */
+    --primary-foreground: #ffffff;
+    /* md_sys_on_primary */
+    --secondary: #625b71;
+    /* md_sys_secondary */
+    --secondary-foreground: #ffffff;
+    /* md_sys_on_secondary */
+    --muted: #e7e0ec;
+    /* md_sys_surface_variant */
+    --muted-foreground: #49454f;
+    /* md_sys_on_surface_variant */
+    --accent: #6750a4;
+    /* use primary as accent by default */
+    --accent-foreground: #ffffff;
+    --destructive: #b3261e;
+    /* md_sys_error */
+    --border: #79747e;
+    /* md_sys_outline */
+    --input: #e7e0ec;
+    /* subtle input surface */
+    --ring: rgba(103, 80, 164, 0.24);
+    /* primary focus ring */
+    --chart-1: #6750a4;
+    --chart-2: #625b71;
+    --chart-3: #7d5260;
+    --card: #ffffff;
+    /* md_sys_surface (card surfaces slightly brighter than background) */
+    --chart-5: #34515e;
+    --sidebar: #fffbfe;
+    --popover: var(--card);
+    /* popovers use surface */
+    --sidebar-primary: #6750a4;
+    --sidebar-primary-foreground: #ffffff;
+    --sidebar-accent: #625b71;
+    --sidebar-accent-foreground: #ffffff;
+    --sidebar-border: #e6e1e5;
+    --sidebar-ring: rgba(103, 80, 164, 0.24);
+    /* State layer colors for MD3 interactions */
+    --state-layer-hover: rgba(103, 80, 164, 0.08);
+    --state-layer-focus: rgba(103, 80, 164, 0.12);
+    --state-layer-pressed: rgba(103, 80, 164, 0.16);
+    /* Elevation shadows (MD3-like approximations) */
+    --elevation-0: none;
+    --elevation-1:
+        0 1px 2px rgba(16, 24, 40, 0.04), 0 1px 3px rgba(16, 24, 40, 0.06);
+    --elevation-2: 0 2px 6px rgba(16, 24, 40, 0.08);
+    --elevation-3: 0 6px 18px rgba(16, 24, 40, 0.12);
 }
 
 .dark {
-  /* Material Design 3 - Dark Theme tokens */
-  --background: #1C1B1F;
-  /* md_sys_background */
-  --foreground: #E6E1E5;
-  /* md_sys_on_background */
-  --card: #1C1B1F;
-  /* surface */
-  --card-foreground: #E6E1E5;
-  --popover: #1C1B1F;
-  --popover-foreground: #E6E1E5;
-  --primary: #D0BCFF;
-  --input: #F5F3F7;
-  /* subtle input surface (filled) */
-  --primary-foreground: #371E73;
-  /* md_sys_on_primary */
-  --secondary: #CCC2DC;
-  --secondary-foreground: #332D41;
-  --muted: #49454F;
-  /* surface-variant */
-  --muted-foreground: #E8DEF8;
-  /* on-surface-variant */
-  --accent: #D0BCFF;
-  --accent-foreground: #371E73;
-  --destructive: #F2B8B5;
-  /* md_sys_error (dark) */
-  --border: #938F99;
-  /* md_sys_outline */
-  --input: #2A272B;
-  /* slightly elevated surface */
-  --ring: rgba(208, 188, 255, 0.18);
-  --chart-1: #D0BCFF;
-  --chart-2: #CCC2DC;
-  --chart-3: #EFB8C8;
-  --chart-4: #8D97A3;
-  --chart-5: #5C7682;
-  --sidebar: #1C1B1F;
-  --sidebar-foreground: #E6E1E5;
-  --sidebar-primary: #D0BCFF;
-  --sidebar-primary-foreground: #371E73;
-  --sidebar-accent: #CCC2DC;
-  --sidebar-accent-foreground: #332D41;
-  --sidebar-border: rgba(255, 255, 255, 0.06);
-  --sidebar-ring: rgba(208, 188, 255, 0.18);
-  --state-layer-hover: rgba(208, 188, 255, 0.08);
-  --state-layer-focus: rgba(208, 188, 255, 0.12);
-  --state-layer-pressed: rgba(208, 188, 255, 0.16);
-  --elevation-0: none;
-  --elevation-1: 0 1px 2px rgba(0, 0, 0, 0.24), 0 1px 3px rgba(0, 0, 0, 0.32);
-  --elevation-2: 0 2px 6px rgba(0, 0, 0, 0.28);
-  --elevation-3: 0 6px 18px rgba(0, 0, 0, 0.36);
+    /* Material Design 3 - Dark Theme tokens */
+    --background: #1c1b1f;
+    /* md_sys_background */
+    --foreground: #e6e1e5;
+    /* md_sys_on_background */
+    --card: #1c1b1f;
+    /* surface */
+    --card-foreground: #e6e1e5;
+    --popover: #1c1b1f;
+    --popover-foreground: #e6e1e5;
+    --primary: #d0bcff;
+    --input: #f5f3f7;
+    /* subtle input surface (filled) */
+    --primary-foreground: #371e73;
+    /* md_sys_on_primary */
+    --secondary: #ccc2dc;
+    --secondary-foreground: #332d41;
+    --muted: #49454f;
+    /* surface-variant */
+    --muted-foreground: #e8def8;
+    /* on-surface-variant */
+    --accent: #d0bcff;
+    --accent-foreground: #371e73;
+    --destructive: #f2b8b5;
+    /* md_sys_error (dark) */
+    --border: #938f99;
+    /* md_sys_outline */
+    --input: #2a272b;
+    /* slightly elevated surface */
+    --ring: rgba(208, 188, 255, 0.18);
+    --chart-1: #d0bcff;
+    --chart-2: #ccc2dc;
+    --chart-3: #efb8c8;
+    --chart-4: #8d97a3;
+    --chart-5: #5c7682;
+    --sidebar: #1c1b1f;
+    --sidebar-foreground: #e6e1e5;
+    --sidebar-primary: #d0bcff;
+    --sidebar-primary-foreground: #371e73;
+    --sidebar-accent: #ccc2dc;
+    --sidebar-accent-foreground: #332d41;
+    --sidebar-border: rgba(255, 255, 255, 0.06);
+    --sidebar-ring: rgba(208, 188, 255, 0.18);
+    --state-layer-hover: rgba(208, 188, 255, 0.08);
+    --state-layer-focus: rgba(208, 188, 255, 0.12);
+    --state-layer-pressed: rgba(208, 188, 255, 0.16);
+    --elevation-0: none;
+    --elevation-1: 0 1px 2px rgba(0, 0, 0, 0.24), 0 1px 3px rgba(0, 0, 0, 0.32);
+    --elevation-2: 0 2px 6px rgba(0, 0, 0, 0.28);
+    --elevation-3: 0 6px 18px rgba(0, 0, 0, 0.36);
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50 p-0 m-0;
-  }
+    * {
+        @apply border-border outline-ring/50 p-0 m-0;
+    }
 
-  body {
-    @apply bg-background text-foreground p-0 m-0 md:grid min-h-screen leading-6 md:grid-cols-[auto_1fr];
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  }
+    body {
+        @apply bg-background text-foreground p-0 m-0 md:grid min-h-screen leading-6 md:grid-cols-[auto_1fr];
+        font-family:
+            "Inter",
+            -apple-system,
+            BlinkMacSystemFont,
+            "Segoe UI",
+            "Roboto",
+            "Oxygen",
+            "Ubuntu",
+            "Cantarell",
+            "Fira Sans",
+            "Droid Sans",
+            "Helvetica Neue",
+            sans-serif;
+    }
 
-  img {
-    width: 100%;
-    object-fit: cover;
-  }
+    img {
+        width: 100%;
+        object-fit: cover;
+    }
 
+    /* MD3 elevation utility classes */
+    .elevation-1 {
+        box-shadow: var(--elevation-1);
+    }
 
-  /* MD3 elevation utility classes */
-  .elevation-1 {
-    box-shadow: var(--elevation-1);
-  }
+    .elevation-2 {
+        box-shadow: var(--elevation-2);
+    }
 
-  .elevation-2 {
-    box-shadow: var(--elevation-2);
-  }
+    .elevation-3 {
+        box-shadow: var(--elevation-3);
+    }
 
-  .elevation-3 {
-    box-shadow: var(--elevation-3);
-  }
+    /* Custom scrollbar styling to match MD3 theme */
+    * {
+        scrollbar-width: thin;
+        scroll-behavior: smooth;
+        scrollbar-color: var(--muted-foreground) var(--muted);
+    }
 
-  /* Custom scrollbar styling to match MD3 theme */
-  * {
-    scrollbar-width: thin;
-    scroll-behavior: smooth;
-    scrollbar-color: var(--muted-foreground) var(--muted);
-  }
+    /* Webkit scrollbars (Chrome, Safari, Edge) */
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
 
-  /* Webkit scrollbars (Chrome, Safari, Edge) */
-  ::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-  }
+    ::-webkit-scrollbar-track {
+        background: var(--muted);
+        border-radius: var(--radius);
+    }
 
-  ::-webkit-scrollbar-track {
-    background: var(--muted);
-    border-radius: var(--radius);
-  }
+    ::-webkit-scrollbar-thumb {
+        background: var(--muted-foreground);
+        border-radius: var(--radius);
+        transition: background-color 0.2s ease;
+    }
 
-  ::-webkit-scrollbar-thumb {
-    background: var(--muted-foreground);
-    border-radius: var(--radius);
-    transition: background-color 0.2s ease;
-  }
+    ::-webkit-scrollbar-thumb:hover {
+        background: var(--primary);
+    }
 
-  ::-webkit-scrollbar-thumb:hover {
-    background: var(--primary);
-  }
+    ::-webkit-scrollbar-thumb:active {
+        background: var(--primary);
+    }
 
-  ::-webkit-scrollbar-thumb:active {
-    background: var(--primary);
-  }
-
-  ::-webkit-scrollbar-corner {
-    background: var(--muted);
-  }
+    ::-webkit-scrollbar-corner {
+        background: var(--muted);
+    }
 }
 
 html,
 body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Shimmer animation for loading states */
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.animate-shimmer {
+    animation: shimmer 2s infinite;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+}
+
+.dark .animate-shimmer {
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.05),
+        transparent
+    );
 }
