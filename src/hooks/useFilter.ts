@@ -2,7 +2,7 @@
 import type {
   ArticleState,
   ArticleFilterAction,
-} from "@/pages/home/ArticlesFitler/ArticleContext";
+} from "@/pages/home/ArticlesFilter/ArticleContext";
 import { useCallback, useMemo, type ActionDispatch } from "react";
 
 export function useFilter(

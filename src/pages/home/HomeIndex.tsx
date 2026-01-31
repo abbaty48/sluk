@@ -1,4 +1,4 @@
-import { ArticlesFilter } from "@/pages/home/ArticlesFitler/ArticlesFitler";
+import { ArticlesFilter } from "@/pages/home/ArticlesFilter/ArticlesFitler";
 import { Library, Filter, FilterX, Grid3X3, List } from "lucide-react";
 import { HomeProvider } from "@/states/providers/homeProvider";
 import { HomeBookMark } from "@/components/HeaderBookmark";

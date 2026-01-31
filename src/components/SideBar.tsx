@@ -1,19 +1,19 @@
-import { Link } from "react-router";
+import { NavLink } from "react-router";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ToggleTheme";
-import { Library, MessageCircleMore, UserRound } from "lucide-react";
+import { BookOpen, History, UserRound } from "lucide-react";
 
 function SideBarNav() {
     return (
         <nav className="space-y-5 w-9/12 text-xs">
-            <Link to={"/"} className={"flex flex-col flex-wrap p-2 gap-2 items-center justify-center hover:bg-sidebar-ring/20 hover:rounded-[20%]"} title="Homepage" aria-hidden>
-                <Library size={20} />
+            <NavLink to={"/"} className={({ isActive }) => `flex flex-col flex-wrap p-2 gap-2 items-center justify-center hover:bg-sidebar-ring/20 hover:rounded-[20%] ${isActive ? 'bg-sidebar-ring/20 rounded-[20%]' : ''} `} title="Homepage" aria-hidden>
+                <BookOpen size={20} />
                 <span>Library</span>
-            </Link>
-            <Link to={"/"} className="flex flex-wrap p-2 gap-2 items-center justify-center hover:bg-sidebar-ring/20 hover:rounded-[20%]" aria-label="Contact us" title="Contact us for more information.">
-                <MessageCircleMore size={20} />
-                <span>Contact</span>
-            </Link>
+            </NavLink>
+            <NavLink to={"/recent"} className={({ isActive }) => `flex flex-wrap p-2 gap-2 items-center justify-center hover:bg-sidebar-ring/20 hover:rounded-[20%] ${isActive ? 'bg-sidebar-ring/20 rounded-[20%]' : ''} `} aria-label="Recent articles you've viewed." title="Recent articles you've opened.">
+                <History size={20} />
+                <span>Recent's</span>
+            </NavLink>
         </nav>
     )
 }
