@@ -47,5 +47,76 @@
   "keywords": "Keywords",
   "language": "Language",
   "fileType": "File Type",
-  "lastUpdated": "Last Updated"
+  "lastUpdated": "Last Updated",
+
+  "citation": {
+    "title": "Cite This Work",
+    "format": "Citation Format",
+    "selectFormat": "Select citation format",
+    "preview": "Citation preview",
+    "showPreview": "▶ Show Preview",
+    "hidePreview": "▼ Hide Preview",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "copyToClipboard": "Copy citation to clipboard",
+    "download": "Download",
+    "downloadFile": "Download citation as text file",
+    "downloaded": "Citation downloaded",
+    "share": "Share",
+    "shareVia": "Share citation",
+    "actions": "Citation actions"
+  },
+
+  "filter": {
+    "presets": {
+      "title": "Filter Presets",
+      "save": "Save",
+      "saveNew": "Save current filters as preset",
+      "savePreset": "Save Preset",
+      "saved": "Filter preset saved successfully",
+      "createNew": "Create New Preset",
+      "name": "Name",
+      "nameRequired": "Preset name is required",
+      "namePlaceholder": "e.g., Recent Physics Papers",
+      "description": "Description",
+      "optional": "optional",
+      "descriptionPlaceholder": "What does this preset filter for?",
+      "cancel": "Cancel",
+      "list": "Saved filter presets",
+      "empty": "No saved presets yet.",
+      "saveToStart": "Save your current filters to get started!",
+      "confirmDelete": "Are you sure you want to delete the preset \"{{name}}\"?",
+      "deleted": "Preset \"{{name}}\" deleted"
+    }
+  },
+
+  "readingProgress": {
+    "label": "Reading progress",
+    "complete": "complete",
+    "remaining": "left",
+    "finished": "Reading complete!",
+    "lessThanMinute": "Less than 1 min",
+    "oneMinute": "1 min",
+    "minutes": "{{count}} min",
+    "hours": "{{count}} hr",
+    "hoursMinutes": "{{hours}} hr {{minutes}} min",
+    "milestone": "{{progress}}% of article read",
+    "loading": "Loading related article"
+  },
+
+  "relatedArticles": {
+    "title": "Related Articles",
+    "youMayAlsoLike": "You May Also Like",
+    "list": "List of related articles",
+    "navigation": "Related articles navigation",
+    "viewArticle": "View article: {{title}}",
+    "readMore": "Read more",
+    "loading": "Loading related article",
+    "noResults": "No related articles found.",
+    "summary": "{{count}} related articles available",
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "daysAgo": "{{days}} days ago",
+    "weeksAgo": "{{weeks}} weeks ago"
+  }
 }
