@@ -2,6 +2,7 @@ import { ArticleGridView, ArticleListView } from "@/components/ArticleView";
 import { useArticlesHistory } from "@/hooks/useArticlesHistory";
 import { ViewModeButton } from "@/components/ViewModeButton";
 import { Articles } from "./home/Articles/Articles";
+import { Badge } from "@/components/ui/badge";
 import { FileBox } from "lucide-react";
 import { } from 'react-router'
 import { useState } from "react";
@@ -29,7 +30,7 @@ function EmptyHistory() {
  */
 export const Component = function RecentArticlesPage() {
 
-    const { paginatedHistory } = useArticlesHistory();
+    const { history, paginatedHistory } = useArticlesHistory();
     const [viewMode, changeViewMode] = useState<"grid" | "list">("grid");
 
     const toggleViewMode = () => {
@@ -37,8 +38,15 @@ export const Component = function RecentArticlesPage() {
     }
 
     return <article className="p-4 space-y-4">
-        <h1 className="text-2xl font-bold">Recent Articles { }</h1>
-        <ViewModeButton toggleViewMode={toggleViewMode} viewMode={viewMode} />
+        <h1 className="flex gap-2 text-2xl font-bold">Recent Articles
+            {history.length > 0 &&
+                <Badge className="text-xs w-5 h-5 leading-4 font-bold" variant="secondary" aria-labelledby="historyLength">
+                    <span id="historyLength" className="sr-only">Number of recent articles:</span>
+                    ({history.length > 99 ? "+99" : history.length})
+                </Badge>
+            }
+        </h1>
+        {history.length > 0 && <ViewModeButton toggleViewMode={toggleViewMode} viewMode={viewMode} />}
         {paginatedHistory().length === 0 ? (
             <article>
                 <div className="flex justify-center items-center h-full">
