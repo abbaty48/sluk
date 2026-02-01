@@ -34,8 +34,6 @@ const DocViewer = lazy(() =>
 );
 
 export function ArticleDetails({ article, files, pdfFile, docFile, videoFile, imageFile }: { article: TEnrichedArticle, files: any; pdfFile: any; docFile: any; videoFile: any; imageFile: any; }) {
-
-
     const { t, i18n } = useTranslation();
     const {
         speak,
@@ -407,7 +405,7 @@ export function ArticleDetails({ article, files, pdfFile, docFile, videoFile, im
                                             <span className="font-medium">{t("fileType")}</span>
                                         </div>
                                         <div className="flex flex-wrap gap-2 ml-6">
-                                            {files.map((file, idx) => (
+                                            {files.map((file: any, idx: any) => (
                                                 <span
                                                     key={idx}
                                                     className="text-xs px-2 py-1 bg-primary/10 text-primary rounded-full"
