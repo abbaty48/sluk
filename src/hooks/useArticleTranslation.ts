@@ -27,6 +27,7 @@ export function useArticleTranslation(
   const [isTranslating, setIsTranslating] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
 
+
   useEffect(() => {
     // Reset to original content if target language is same as source
     if (targetLang === sourceLang) {

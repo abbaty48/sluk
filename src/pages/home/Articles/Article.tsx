@@ -2,11 +2,10 @@ import type { TEnrichedArticle } from "@/lib/types/TArticle";
 import { LucideVideo } from "lucide-react";
 import { Link } from "react-router";
 
-interface ArticleProps {
-  item: TEnrichedArticle;
-}
 
-export function Article({ item }: ArticleProps) {
+export function Article(props: TEnrichedArticle) {
+  const item = props;
+
   return (
     <Link key={item.id} to={`/article/${item.id}`} className="block h-fit">
       <article className="relative bg-card border border-border rounded-lg hover:shadow-md transition-shadow cursor-pointer flex flex-col ">
@@ -30,18 +29,16 @@ export function Article({ item }: ArticleProps) {
             {item.abstract}
           </p>
           <div className="text-xs text-muted-foreground space-y-1">
-            <div>Type: {item.itemTypeName || "Unknown"}</div>
-            <div>Collection: {item.collectionName || "Unknown"}</div>
-            <div>Community: {item.communityName || "Unknown"}</div>
-            <div>File Type: {item.fileType || "Unknown"}</div>
-            <div>Submitter: {item.submitter || "Unknown"}</div>
-            <div>
+            {item.itemTypeName && <p>{item.itemTypeName}</p>}
+            {item.collectionName && <p>{item.collectionName}</p>}
+            {item.communityName && <p>{item.communityName}</p>}
+            {item.fileType && <p>{item.fileType}</p>}
+            <p>Submitter: {item.submitter || "Unknown"}</p>
+            <p>
               Status: {item.status} | Created:{" "}
               {new Date(item.created_at).toLocaleDateString()}
-            </div>
-            <div>
-              Views: {item.views} | Downloads: {item.downloads}
-            </div>
+            </p>
+            <p>Views: {item.views} | Downloads: {item.downloads}</p>
             {item.pages && <div>Pages: {item.pages}</div>}
             {item.publisher && <div>Publisher: {item.publisher}</div>}
             {item.hasVideo && <div>Has Video: Yes</div>}

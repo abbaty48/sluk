@@ -10,7 +10,7 @@ function SideBarNav() {
                 <BookOpen size={20} />
                 <span>Library</span>
             </NavLink>
-            <NavLink to={"/recent"} className={({ isActive }) => `flex flex-wrap p-2 gap-2 items-center justify-center hover:bg-sidebar-ring/20 hover:rounded-[20%] ${isActive ? 'bg-sidebar-ring/20 rounded-[20%]' : ''} `} aria-label="Recent articles you've viewed." title="Recent articles you've opened.">
+            <NavLink to={"/recent-articles"} className={({ isActive }) => `flex flex-wrap p-2 gap-2 items-center justify-center hover:bg-sidebar-ring/20 hover:rounded-[20%] ${isActive ? 'bg-sidebar-ring/20 rounded-[20%]' : ''} `} aria-label="Recent articles you've viewed." title="Recent articles you've opened.">
                 <History size={20} />
                 <span>Recent's</span>
             </NavLink>

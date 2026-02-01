@@ -1,8 +1,7 @@
-import { Article } from "./Article";
-import Masonry from "react-masonry-css";
 import { FileBox, BookOpen } from "lucide-react";
 import { useViewMode } from "@/hooks/useViewMode";
 import type { TEnrichedArticle } from "@/lib/types/TArticle";
+import { ArticleGridView, ArticleListView } from "@/components/ArticleView";
 
 type Props = Partial<{
   searchTerm: string;
@@ -41,36 +40,6 @@ function EmptyState({ onBrowseAll }: Props) {
   );
 }
 
-function GridView({ articles }: { articles: TEnrichedArticle[] | undefined }) {
-  const breakpointColumnsObj = {
-    default: 3,
-    1024: 2,
-    768: 2,
-    500: 1,
-  };
-
-  return (
-    <Masonry
-      breakpointCols={breakpointColumnsObj}
-      className="flex gap-4"
-      columnClassName="flex flex-col gap-4"
-    >
-      {articles?.map((article) => (
-        <Article key={article.id} item={article} />
-      ))}
-    </Masonry>
-  );
-}
-
-function ListView({ articles }: { articles: TEnrichedArticle[] | undefined }) {
-  return (
-    <div className="flex flex-col gap-4">
-      {articles?.map((article) => (
-        <Article key={article.id} item={article} />
-      ))}
-    </div>
-  );
-}
 
 export function ArticlesRenderer({
   articles,
@@ -82,11 +51,11 @@ export function ArticlesRenderer({
   return articles?.length === 0 || inSearchMode ? (
     <>
       <EmptyState onBrowseAll={_onBrowseAll} />
-      <GridView articles={articles?.slice(0, 9)} />
+      <ArticleGridView articles={articles?.slice(0, 9)} />
     </>
   ) : viewMode === "grid" ? (
-    <GridView articles={articles} />
+    <ArticleGridView articles={articles} />
   ) : (
-    <ListView articles={articles} />
+    <ArticleListView articles={articles} />
   );
 }

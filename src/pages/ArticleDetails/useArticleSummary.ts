@@ -1,18 +1,17 @@
 import { getArticleById, getArticleFiles } from "@/api/fetchArticles";
-import type { TArticle } from "@/lib/types/TArticle";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useSuspenseQuery } from "@tanstack/react-query";
+import type { TEnrichedArticle } from "@/lib/types/TArticle";
 
 export function useArticleSummary(id: string | undefined) {
   // Fetch article data
-  const { data: article, isLoading: isLoadingArticle } = useQuery<TArticle>({
+  const { data: article, isLoading: isLoadingArticle } = useSuspenseQuery<TEnrichedArticle>({
     queryKey: ["article", id],
     queryFn: () => {
       if (!id) throw new Error("Article ID is required");
-      const article = getArticleById(id);
+      const article = getArticleById(id) as TEnrichedArticle | null;
       if (!article) throw new Error("Article not found");
       return article;
     },
-    enabled: !!id,
   });
 
   // Fetch article files
