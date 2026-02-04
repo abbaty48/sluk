@@ -137,7 +137,9 @@ export function applyArticleFilters(
         item.name.toLowerCase() === (filter.category as string).toLowerCase(),
     );
     if (type) {
-      filtered = filtered.filter((article) => article.item_type_id === type.id);
+      filtered = filtered.filter(
+        (article) => article.item_type_id === Number(type.id),
+      );
     }
   }
 
@@ -226,15 +228,15 @@ export function getArticles<
         ? imageFile.file_path
         : article.thumbnail || null;
       const itemType = db.item_types.find(
-        (type) => type.id === article.item_type_id,
+        (type) => Number(type.id) === article.item_type_id,
       );
       const itemTypeName = itemType ? itemType.name : "";
       const collection = db.collections.find(
-        (col) => col.id === article.collection_id,
+        (col) => Number(col.id) === article.collection_id,
       );
       const collectionName = collection ? collection.name : "";
       const community = db.communities.find(
-        (com) => com.id === collection?.community_id,
+        (com) => Number(com.id) === collection?.community_id,
       );
       const communityName = community ? community.name : "";
 
@@ -260,6 +262,35 @@ export function getArticles<
 
   return new Promise((resolve) => setTimeout(() => resolve(result), 3000));
 }
+
+export function createArticleReview(
+  articleId: string,
+  reviewData: { rating: number; comment: string },
+) {
+  const newReview = {
+    id: Math.random().toString(36).substring(2, 9),
+    articleId,
+    userId: "guest_id",
+    rating: reviewData.rating,
+    comment: reviewData.comment,
+    createdAt: new Date().toISOString(),
+  };
+  db.reviews.push(newReview);
+  return newReview;
+}
+/*
+export function getArticleReviews(articleId: string): IReview {
+  const reviews = db.reviews.filter((review) => review.articleId === articleId);
+  if (reviews.length > 0) {
+    const avg =
+      Math.round(
+        (reviews.reduce((s, r) => s + r.rating, 0) / reviews.length) * 10,
+      ) / 10;
+    return { reviews, avg };
+  }
+  return { reviews: [], avg: 0 };
+}
+*/
 
 export function getArticleById(id: string): TArticle | undefined {
   const allArticles = db.items as TArticle[];
