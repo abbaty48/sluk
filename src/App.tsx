@@ -12,8 +12,15 @@ const router = createBrowserRouter([
     element: <LayoutRoot />,
     children: [
       { index: true, element: <Home /> },
-      { path: "article/:id", lazy: () => import("./pages/ArticleDetails/ArticleDetailsPage.tsx") },
-      { path: "recent-articles", lazy: () => import("./pages/RecentArticlesPage.tsx") }
+      {
+        path: "article/:id",
+        lazy: () => import("./pages/ArticleDetails/ArticleDetailsPage.tsx"),
+      },
+      {
+        path: "recent-articles",
+        lazy: () => import("./pages/RecentArticlesPage.tsx"),
+      },
+      { path: "ai-articles", lazy: () => import("./pages/AILibraryPage.tsx") },
     ],
   },
 ]);
