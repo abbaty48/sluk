@@ -2,14 +2,11 @@ import { NavLink } from "react-router";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ToggleTheme";
 import {
-  BookOpen,
-  Brain,
-  Download,
-  HardDriveDownload,
   History,
-  Sparkle,
+  BookOpen,
   Sparkles,
   UserRound,
+  HardDriveDownload,
 } from "lucide-react";
 
 function SideBarNav() {
